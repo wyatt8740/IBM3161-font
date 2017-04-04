@@ -31,7 +31,7 @@ Version 2 or (at your option) a later version, with the exception that
 embedding the font in a document does not in itself constitute a violation of
 the GNU GPL. The full terms of the license are in GNU Unifont's
 [LICENSE.txt](http://unifoundry.com/LICENSE.txt). This license is inherited
-because I have based it on GNU Unifont.
+because I have based my font on GNU Unifont.
 
 If you wish to use only the glyphs that I created (0x00-0x7F in the truetype, or
 0x00-0xFF in the bitmap), those glyphs are licensed (at your option) under the
@@ -65,4 +65,3 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
