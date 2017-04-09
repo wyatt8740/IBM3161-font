@@ -4,7 +4,9 @@ of Unicode above the basic ASCII set my IBM terminal supports.
 
 ![Screenshot of the ASCII set on my terminal](http://i.imgur.com/f2eG8H8.png)
 
-==Contents==
+Contents
+--------
+
 This repository contains a bitmap version of the font as well as a
 (slightly less complete) truetype version created through GNU Unifont's
 "tracing" program which it uses to create its truetype versions. The truetype
@@ -13,7 +15,9 @@ to cover through 0xFF in the bitmap versions (I generated the truetype before
 I added 0x80-0xFF into the bitmap, and I don't have access to the scripts I made
 to convert to a truetype. They are too much effort for something I rarely use).
 
-==Installation==
+Installation
+------------
+
 This depends on your platform, but I will try to lay out what works where.
 
 On Windows, you will want the windows bitmap .fon file and/or the TrueType font
@@ -28,7 +32,8 @@ software subpixel rendering attempted on them like the TrueType font does.
 On Apple systems (OS X) I have not tested this font yet, but I _think_ you want
 to use the '.dfont' file. If that fails, try the .ttf or the .pt3 (PS type 3).
 
-==How I made it==
+How I made it
+-------------
 
 I screen-scraped the font from my IBM 3161 by hand via its built-in "test"
 mode, where it prints out its entire ASCII character set on a single screen. As
