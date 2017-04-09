@@ -2,7 +2,7 @@ This is a very basic repository for my IBM 3161 ASCII terminal font.
 I used GNU Unifont as a base because it looks somewhat similar and covers a lot
 of Unicode above the basic ASCII set my IBM terminal supports.
 
-![Screenshot of the ASCII set on my terminal](http://i.imgur.com/MtoZrOI.png)
+![Screenshot of the ASCII set on my terminal](http://i.imgur.com/f2eG8H8.png)
 
 ==Contents==
 This repository contains a bitmap version of the font as well as a
