@@ -2,6 +2,32 @@ This is a very basic repository for my IBM 3161 ASCII terminal font.
 I used GNU Unifont as a base because it looks somewhat similar and covers a lot
 of Unicode above the basic ASCII set my IBM terminal supports.
 
+==Contents==
+This repository contains a bitmap version of the font as well as a
+(slightly less complete) truetype version created through GNU Unifont's
+"tracing" program which it uses to create its truetype versions. The truetype
+covers 0x00 through 0x7F (the basic ASCII set), where I have extended the font
+to cover through 0xFF in the bitmap versions (I generated the truetype before
+I added 0x80-0xFF into the bitmap, and I don't have access to the scripts I made
+to convert to a truetype. They are too much effort for something I rarely use).
+
+==Installation==
+This depends on your platform, but I will try to lay out what works where.
+
+On Windows, you will want the windows bitmap .fon file and/or the TrueType font
+(.ttf).
+
+In Linux distros with X11, you'll want the OpenType bitmap (.otb) and/or the
+TrueType font (.ttf).
+
+On both those platforms the bitmap versions benefit from not getting any
+software subpixel rendering attempted on them like the TrueType font does.
+
+On Apple systems (OS X) I have not tested this font yet, but I _think_ you want
+to use the '.dfont' file. If that fails, try the .ttf or the .pt3 (PS type 3).
+
+==How I made it==
+
 I screen-scraped the font from my IBM 3161 by hand via its built-in "test"
 mode, where it prints out its entire ASCII character set on a single screen. As
 a result, I cannot guarantee it to be 100% accurate in terms of spacing between
@@ -18,20 +44,13 @@ over a pixel, and from some trigonometry I did using the CAD tracings. Character
 0x7F is a checkerboard pattern, which made it easy for me to find out what the
 aspect ratio of each 'pixel' is on the CRT near the center of the display.
 
-Anyway, this repository contains a bitmap version of the font as well as a
-(slightly less complete) truetype version created through GNU Unifont's
-"tracing" program which it uses to create its truetype versions. The truetype
-covers 0x00 through 0x7F (the basic ASCII set), where I have extended the font
-to cover through 0xFF in the bitmap versions (I generated the truetype before
-I added 0x80-0xFF into the bitmap, and I don't have access to the scripts I made
-to convert to a truetype. They are too much effort for something I rarely use).
-
-These font files are licensed under the GNU General Public License, either
-Version 2 or (at your option) a later version, with the exception that
-embedding the font in a document does not in itself constitute a violation of
-the GNU GPL. The full terms of the license are in GNU Unifont's
+==Licensing==
+These font files are licensed under the GNU General Public License (where
+applicable), either version 2 or (at your option) a later version, with the
+exception that embedding the font in a document does not in itself constitute a
+violation of the GPL. The full terms of the license are in GNU Unifont's
 [LICENSE.txt](http://unifoundry.com/LICENSE.txt). This license is inherited
-because I have based my font on GNU Unifont.
+because I have based my font on GNU Unifont for nearly all non-ASCII characters.
 
 If you wish to use only the glyphs that I created (0x00-0x7F in the truetype, or
 0x00-0xFF in the bitmap), those glyphs are licensed (at your option) under the
