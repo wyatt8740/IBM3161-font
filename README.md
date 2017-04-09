@@ -51,7 +51,9 @@ over a pixel, and from some trigonometry I did using the CAD tracings. Character
 0x7F is a checkerboard pattern, which made it easy for me to find out what the
 aspect ratio of each 'pixel' is on the CRT near the center of the display.
 
-==Licensing==
+Licensing
+---------
+
 These font files are licensed under the GNU General Public License (where
 applicable), either version 2 or (at your option) a later version, with the
 exception that embedding the font in a document does not in itself constitute a
