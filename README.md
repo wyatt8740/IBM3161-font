@@ -29,8 +29,8 @@ TrueType font (.ttf).
 On both those platforms the bitmap versions benefit from not getting any
 software subpixel rendering attempted on them like the TrueType font does.
 
-On Apple systems (OS X) I have not tested this font yet, but I _think_ you want
-to use the '.dfont' file. If that fails, try the .ttf or the .pt3 (PS type 3).
+On Apple systems (OS X), you'll want to use the '.dfont' file. If that fails,
+try the .ttf or the .pt3 (PS type 3).
 
 How I made it
 -------------
@@ -40,6 +40,10 @@ mode, where it prints out its entire ASCII character set on a single screen. As
 a result, I cannot guarantee it to be 100% accurate in terms of spacing between
 characters, but I can say that I personally have yet to notice anything wrong
 with it. I have used it in my terminal emulator exclusively for five months now.
+
+You can find some of the images I used [here](http://imgur.com/a/XHyDb) (though
+I have others that I did with a different amber CRT; I still need to dig those
+files up).
 
 As such, I am as confident as one can be when using guesswork and (to an extent)
 tracing the letters in CAD and transforming my photos of the screen to correct
