@@ -55,6 +55,8 @@ over a pixel, and from some trigonometry I did using the CAD tracings. Character
 0x7F is a checkerboard pattern, which made it easy for me to find out what the
 aspect ratio of each 'pixel' is on the CRT near the center of the display.
 
+![Photo of IBM 3161 terminal with amber CRT playing the text-based adventure game, Zork](http://i.imgur.com/MkboCJs.jpg)
+
 Licensing
 ---------
 
@@ -97,5 +99,3 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-![Photo of IBM 3161 terminal with amber CRT playing the text-based adventure game, Zork](http://i.imgur.com/MkboCJs.jpg)
