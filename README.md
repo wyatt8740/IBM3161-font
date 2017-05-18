@@ -32,6 +32,19 @@ software subpixel rendering attempted on them like the TrueType font does.
 On Apple systems (OS X), you'll want to use the '.dfont' file. If that fails,
 try the .ttf or the .pt3 (PS type 3).
 
+For the OpenType bitmap to work in a linux distro, you may need to enable
+bitmap fonts on your system - on Debian, at least, they are disabled by default
+for some reason or another. On Debian, this is fixable by deleting
+`70-no-bitmaps.conf`: `rm /etc/fonts/conf.d/70-no-bitmaps.conf`. You may also
+want to consider running `dpkg-reconfigure fontconfig-config` and changing
+the setting there. Then you might also have to run
+`dpkg-reconfigure fontconfig` after that, according to random people on the
+internet. I typically just delete `70-no-bitmaps.conf` and copy
+`/usr/share/fontconfig/conf.avail/70-yes-bitmaps.conf` to the filename
+`70-no-bitmaps.conf`, and then use `chattr +i 70-no-bitmaps.conf` to make sure
+updates don't overwrite my setting. Probably sub-par, but that's how I have
+always done it (tm).
+
 How I made it
 -------------
 
