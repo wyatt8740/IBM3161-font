@@ -103,8 +103,8 @@ because I have based my font on GNU Unifont for nearly all non-ASCII characters.
 If you wish to use only the glyphs that I created (0x00-0x7F in the truetype, or
 0x00-0xFF in the bitmap), those glyphs are licensed (at your option) under the
 GNU GPL version 2 or later (with the aforementioned exception regarding
-embedding), the [SIL Open Font License, version 1.1]
-(http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL#5667e9e4), 
+embedding), the 
+[SIL Open Font License, version 1.1](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL#5667e9e4), 
 or the 3-Clause BSD License, which is reproduced
 below:
 
