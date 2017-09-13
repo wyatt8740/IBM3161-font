@@ -13,8 +13,14 @@ less complete) truetype version created through GNU Unifont's "tracing" program
 which it uses to create its truetype versions. The truetype covers 0x00 through 
 0x7F (the basic ASCII set), where I have extended the font to cover through 
 0xFF in the bitmap versions (I generated the truetype before I added 0x80-0xFF 
-into the bitmap, and I don't have access to the scripts I made to convert to a 
-truetype. They are too much effort for something I rarely use).
+into the bitmap, and I don't have access anymore to the scripts I made to
+convert to a truetype. They are too much effort for something I rarely use, and
+all of the essentials are still in the TTF anyway).
+
+I also have included the Fontforge Spline Font Database (SFD) files, which
+are uncompressed text (and thus pretty big; sorry). If you just want to use the
+font, I therefore suggest downloading the zip on the 'releases' page instead of
+cloning the repo.
 
 Installation
 ------------
@@ -90,13 +96,15 @@ Licensing
 These font files are licensed under the GNU General Public License (where
 applicable), either version 2 or (at your option) a later version, with the
 exception that embedding the font in a document does not in itself constitute a
-violation of the GPL. The full terms of the license are in GNU Unifont's
+violation of the license. The full terms of the license are in GNU Unifont's
 [LICENSE.txt](http://unifoundry.com/LICENSE.txt). This license is inherited
 because I have based my font on GNU Unifont for nearly all non-ASCII characters.
 
 If you wish to use only the glyphs that I created (0x00-0x7F in the truetype, or
 0x00-0xFF in the bitmap), those glyphs are licensed (at your option) under the
-GNU GPL version 2 or later, or the 3-Clause BSD License, which is reproduced
+GNU GPL version 2 or later, the [SIL Open Font License, version 
+1.1](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL#5667e9e4), 
+or the 3-Clause BSD License, which is reproduced
 below:
 
 
