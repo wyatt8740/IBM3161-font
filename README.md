@@ -1,4 +1,5 @@
 This is a very basic repository for my IBM 3161 ASCII terminal font.
+
 I used GNU Unifont as a base because it looks somewhat similar and covers a lot
 of Unicode above the basic ASCII set my IBM terminal supports.
 
@@ -7,13 +8,13 @@ of Unicode above the basic ASCII set my IBM terminal supports.
 Contents
 --------
 
-This repository contains a bitmap version of the font as well as a
-(slightly less complete) truetype version created through GNU Unifont's
-"tracing" program which it uses to create its truetype versions. The truetype
-covers 0x00 through 0x7F (the basic ASCII set), where I have extended the font
-to cover through 0xFF in the bitmap versions (I generated the truetype before
-I added 0x80-0xFF into the bitmap, and I don't have access to the scripts I made
-to convert to a truetype. They are too much effort for something I rarely use).
+This repository contains a bitmap version of the font as well as a (slightly 
+less complete) truetype version created through GNU Unifont's "tracing" program 
+which it uses to create its truetype versions. The truetype covers 0x00 through 
+0x7F (the basic ASCII set), where I have extended the font to cover through 
+0xFF in the bitmap versions (I generated the truetype before I added 0x80-0xFF 
+into the bitmap, and I don't have access to the scripts I made to convert to a 
+truetype. They are too much effort for something I rarely use).
 
 Installation
 ------------
@@ -24,25 +25,37 @@ On Windows, you will want the windows bitmap .fon file and/or the TrueType font
 (.ttf).
 
 In Linux distros with X11, you'll want the OpenType bitmap (.otb) and/or the
-TrueType font (.ttf).
+TrueType font (.ttf). I think this will be the same on the BSD's with X11.
 
-On both those platforms the bitmap versions benefit from not getting any
-software subpixel rendering attempted on them like the TrueType font does.
+On my Debian system, I made the directory `~/.fonts` and copied
+IBM3161-bitmap.otb and IBM3161.ttf to it. If you don't want/need both versions,
+just copy one or the other. Java programs using AWT/Swing don't seem to work
+with X11 bitmap fonts on Unix systems, though (at least in OpenJDK), so I had
+to keep the TrueType version around for Java programs.
+
+On Unix/Linux and Windows platforms the bitmap versions benefit from not
+getting any software subpixel rendering attempted on them like the TrueType
+font does. This is probably true in OS X as well, but I only tested the .dfont
+version of the font in OS X on account of not actually having regular access to
+OS X.
 
 On Apple systems (OS X), you'll want to use the '.dfont' file. If that fails,
 try the .ttf or the .pt3 (PS type 3).
 
-For the OpenType bitmap to work in a linux distro, you may need to enable
-bitmap fonts on your system - on Debian, at least, they are disabled by default
-for some reason or another. On Debian, this is fixable by deleting
-`70-no-bitmaps.conf`: `rm /etc/fonts/conf.d/70-no-bitmaps.conf`. You may also
-want to consider running `dpkg-reconfigure fontconfig-config` and changing
-the setting there. Then you might also have to run
-`dpkg-reconfigure fontconfig` after that, according to random people on the
-internet. I typically just delete `70-no-bitmaps.conf` and copy
-`/usr/share/fontconfig/conf.avail/70-yes-bitmaps.conf` to the filename
-`70-no-bitmaps.conf`, and then use `chattr +i 70-no-bitmaps.conf` to make sure
-updates don't overwrite my setting. Probably sub-par, but that's how I have
+For the OpenType bitmap to work in a linux distro, you may need to enable 
+bitmap fonts on your system - on Debian, at least, they are disabled by default 
+for some reason or another. On Debian, this is fixable by deleting 
+`70-no-bitmaps.conf`: 
+
+    rm /etc/fonts/conf.d/70-no-bitmaps.conf
+
+You may also want to consider running `dpkg-reconfigure fontconfig-config` and 
+changing the setting there. Then you might also have to run `dpkg-reconfigure 
+fontconfig` after that, according to random people on the internet. I typically 
+just delete `70-no-bitmaps.conf` and copy
+`/usr/share/fontconfig/conf.avail/70-yes-bitmaps.conf` to the filename 
+`70-no-bitmaps.conf`, and then use `chattr +i 70-no-bitmaps.conf` to make sure 
+updates don't overwrite my setting. Probably sub-par, but that's how I have 
 always done it (tm).
 
 How I made it
@@ -68,7 +81,8 @@ over a pixel, and from some trigonometry I did using the CAD tracings. Character
 0x7F is a checkerboard pattern, which made it easy for me to find out what the
 aspect ratio of each 'pixel' is on the CRT near the center of the display.
 
-![Photo of IBM 3161 terminal with amber CRT playing the text-based adventure game, Zork](http://i.imgur.com/MkboCJs.jpg)
+![Photo of IBM 3161 terminal with amber CRT playing the text-based adventure gam
+e, Zork](http://i.imgur.com/MkboCJs.jpg)
 
 Licensing
 ---------
