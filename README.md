@@ -32,6 +32,8 @@ On Windows, you will want the windows bitmap .fon file and/or the TrueType font
 
 In Linux distros with X11, you'll want the OpenType bitmap (.otb) and/or the
 TrueType font (.ttf). I think this will be the same on the BSD's with X11.
+Additionally, for some older X11 apps you may also have to install the X11 PCF
+font. See `X11/README.md` for details.
 
 On my Debian system, I made the directory `~/.fonts` and copied
 IBM3161-bitmap.otb and IBM3161.ttf to it. If you don't want/need both versions,
