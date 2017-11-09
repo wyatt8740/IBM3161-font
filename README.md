@@ -22,6 +22,15 @@ are uncompressed text (and thus pretty big; sorry). If you just want to use the
 font, I therefore suggest downloading the zip on the 'releases' page instead of
 cloning the repo.
 
+As a bonus of sorts, I also have turned the font into a Minecraft 1.11-and-up
+compatible resource pack. With minor tweaking it should also work for earlier
+and future versions. Conveniently, Minecraft uses GNU Unifont for unicode text,
+which is also the base for my font - this made it simple to add by modifying
+some tools included with the Unifont source distribution to export the font.
+
+Instructions to install the Minecraft version of the font are under the
+`minecraft/` directory.
+
 Installation
 ------------
 
