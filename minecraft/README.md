@@ -1,4 +1,4 @@
-Put the directory 'ibm3161' inside your '.minecraft/resourcepacks' directory.
+Put the zipfile 'ibm3161.zip' inside your '.minecraft/resourcepacks' directory.
 
 In Minecraft, add the resource pack to your currently active packs.
 
