@@ -22,19 +22,29 @@ are uncompressed text (and thus pretty big; sorry). If you just want to use the
 font, I therefore suggest downloading the zip on the 'releases' page instead of
 cloning the repo.
 
-As a bonus of sorts, I also have turned the font into a Minecraft 1.11-and-up
-compatible resource pack. With minor tweaking it should also work for earlier
-and future versions. Conveniently, Minecraft uses GNU Unifont for unicode text,
-which is also the base for my font - this made it simple to add by modifying
-some tools included with the Unifont source distribution to export the font.
+Since I first created this font, I have been finding more and more formats I can
+convert it to! Whenever I find another format to port to, I do so and then add
+a commit here. Most recently, Minecraft and Rockbox fonts have been added.
+
+This font is also available in a Minecraft 1.11-and-up compatible resource pack.
+With minor tweaking it should also work for earlier and future versions.
+Conveniently, Minecraft uses GNU Unifont for unicode text, which is also the
+base for my font - this made it simple to add by modifying some tools included
+with the Unifont source distribution to export the font.
 
 Instructions to install the Minecraft version of the font are under the
 `minecraft/` directory.
+
+Additionally, a Rockbox font has been added. Rockbox is an alternative firmware
+for many mp3 players. It has been tested on my iPod Classic. Instructions
+are of course in the `rockbox/` directory.
 
 Installation
 ------------
 
 This depends on your platform, but I will try to lay out what works where.
+For some exotic formats (e.g. Minecraft, Rockbox) the directions are in the
+ports' respective subdirectories.
 
 On Windows, you will want the windows bitmap .fon file and/or the TrueType font
 (.ttf).

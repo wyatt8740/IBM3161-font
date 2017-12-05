@@ -1,0 +1,5 @@
+To install this font in Rockbox, copy the .fnt and .gc files to your devices'
+{root}/.rockbox/fonts/ directory.
+
+(At least, this is how it goes on my iPod 6th gen "classic.")
+
