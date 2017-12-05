@@ -39,6 +39,8 @@ Additionally, a Rockbox font has been added. Rockbox is an alternative firmware
 for many mp3 players. It has been tested on my iPod Classic. Instructions
 are of course in the `rockbox/` directory.
 
+![Photo of font on an iPod running Rockbox](https://i.imgur.com/zdT5HKx.jpg)
+
 Installation
 ------------
 
