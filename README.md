@@ -56,12 +56,12 @@ version of the font in OS X on account of not actually having regular access to
 OS X. (the dfont is a bitmap-only font, so it probably won't be subpixel
 rendered.)
 
-### Windows
+### Windows Installation
 On Windows, you will want the windows bitmap .fon file and/or the TrueType font
 (.ttf). They can be copied manually to `C:\Windows\Fonts`, or installed from
 the font previewer.
 
-### Unix/X11
+### Unix/X11 Installation
 In Unix and Linux distros with X11, you'll want the OpenType bitmap (.otb)
 and/or the TrueType font (.ttf).
 
@@ -111,12 +111,12 @@ and then use `chattr +i 70-no-bitmaps.conf` to make sure updates don't
 overwrite my setting (by setting the 'immutable' flag).
 This is likely sub-par, but that's just how I have always done it (tm).
 
-#### X11 PCF installation
+#### X11 PCF Installation
 The instructions for installing the X11 PCF font are in the
 [X11/README.md](X11/README.md)
 file.
 
-### Mac OS X
+### Mac OS X ('MacOS') Installation
 On Apple systems (OS X), you'll want to use the '.dfont' file. If that fails,
 try the .ttf or the .pt3 (PS type 3). IIRC, the installation process was
 relatively intuitive.
