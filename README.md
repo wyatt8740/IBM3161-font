@@ -5,9 +5,9 @@ of Unicode above the basic ASCII set my IBM terminal supports.
 
 ![Screenshot of the ASCII set on my terminal](http://i.imgur.com/f2eG8H8.png)
 
-Contents
---------
+## Documentation
 
+### Introduction
 This repository contains a bitmap version of the font as well as a (slightly 
 less complete) truetype version created through GNU Unifont's "tracing" program 
 which it uses to create its truetype versions. The truetype covers 0x00 through 
@@ -22,9 +22,11 @@ are uncompressed text (and thus pretty big; sorry). If you just want to use the
 font, I therefore suggest downloading the zip on the 'releases' page instead of
 cloning the repo.
 
+#### Formats
 Since I first created this font, I have been finding more and more formats I can
 convert it to! Whenever I find another format to port to, I do so and then add
-a commit here. Most recently, Minecraft and Rockbox fonts have been added.
+a commit here. Most recently, Minecraft ,Rockbox, and an
+X11 emacs-specific font (to fix strange rendering issues) have been added.
 
 This font is also available in a Minecraft 1.11-and-up compatible resource pack.
 With minor tweaking it should also work for earlier and future versions.
@@ -41,55 +43,86 @@ are of course in the `rockbox/` directory.
 
 ![Photo of font on an iPod running Rockbox](https://i.imgur.com/UsE8YDw.jpg)
 
-Installation
-------------
-
+## Installation
 This depends on your platform, but I will try to lay out what works where.
 For some exotic formats (e.g. Minecraft, Rockbox) the directions are in the
 ports' respective subdirectories.
 
+##### Why install both the bitmap and TrueType versions?
+On Unix/Linux and Windows platforms the bitmap versions benefit from not
+getting any software subpixel rendering attempted on them like the TrueType
+font does. This is probably true in OS X as well, but I only tested the .dfont
+version of the font in OS X on account of not actually having regular access to
+OS X. (the dfont is a bitmap-only font, so it probably won't be subpixel
+rendered.)
+
+### Windows
 On Windows, you will want the windows bitmap .fon file and/or the TrueType font
-(.ttf).
+(.ttf). They can be copied manually to `C:\Windows\Fonts`, or installed from
+the font previewer.
 
-In Linux distros with X11, you'll want the OpenType bitmap (.otb) and/or the
-TrueType font (.ttf). I think this will be the same on the BSD's with X11.
-Additionally, for some older X11 apps you may also have to install the X11 PCF
-font. See `X11/README.md` for details.
+### Unix/X11
+In Unix and Linux distros with X11, you'll want the OpenType bitmap (.otb)
+and/or the TrueType font (.ttf).
 
+There is also a PCF font (old-school X11 font) that it may be a good
+idea to install for programs like `xterm` and the GUI version of `emacs`.
+
+Installing all three versions (TTF, OTB, and PCF) lets you use the font with
+nearly any program on a Unix system. The TTF and OTB can be selected with most
+'font chooser' GUI programs, while the PCF is useful for traditional X11
+programs like `xterm` and is usually set through a text configuration file
+like `~/.Xresources` or `~/.emacs`.
+
+I think this will be the same on the BSD's with X11 as it is for Linux distros,
+since I believe they share a codebase for their X servers and FreeType.
+
+#### X11 OTB and TTF Installation
 On my Debian system, I made the directory `~/.fonts` and copied
 IBM3161-bitmap.otb and IBM3161.ttf to it. If you don't want/need both versions,
 just copy one or the other. Java programs using AWT/Swing don't seem to work
 with X11 bitmap fonts on Unix systems, though (at least in OpenJDK), so I had
 to keep the TrueType version around for Java programs.
 
-On Unix/Linux and Windows platforms the bitmap versions benefit from not
-getting any software subpixel rendering attempted on them like the TrueType
-font does. This is probably true in OS X as well, but I only tested the .dfont
-version of the font in OS X on account of not actually having regular access to
-OS X.
+The OTB is in the directory `opentype-bitmap/`, and the TTF in `truetype/`.
 
-On Apple systems (OS X), you'll want to use the '.dfont' file. If that fails,
-try the .ttf or the .pt3 (PS type 3).
+The PCF's are the only fonts in the `X11/` directory, since they are the ones
+standardized by the X consortium and are the only technically X11-specific fonts
+here.
 
-For the OpenType bitmap to work in a linux distro, you may need to enable 
-bitmap fonts on your system - on Debian, at least, they are disabled by default 
-for some reason or another. On Debian, this is fixable by deleting 
+##### If the OTB bitmap version isn't working
+In Debian, Ubuntu, and possibly other distributions, FreeType has bitmap fonts
+disabled by default for some silly reason.
+
+In Debian, this is fixable by deleting 
 `70-no-bitmaps.conf`: 
-
-    rm /etc/fonts/conf.d/70-no-bitmaps.conf
-
+````
+rm /etc/fonts/conf.d/70-no-bitmaps.conf
+````
 You may also want to consider running `dpkg-reconfigure fontconfig-config` and 
 changing the setting there. Then you might also have to run `dpkg-reconfigure 
-fontconfig` after that, according to random people on the internet. I typically 
-just delete `70-no-bitmaps.conf` and copy
-`/usr/share/fontconfig/conf.avail/70-yes-bitmaps.conf` to the filename 
-`70-no-bitmaps.conf`, and then use `chattr +i 70-no-bitmaps.conf` to make sure 
-updates don't overwrite my setting. Probably sub-par, but that's how I have 
-always done it (tm).
+fontconfig` after that, according to random people on the internet. This is
+not how I have always done it, but it would make sense and be a more 'canonical'
+solution than my own.
 
-How I made it
--------------
+One can also just delete `70-no-bitmaps.conf` and copy
+`/usr/share/fontconfig/conf.avail/70-yes-bitmaps.conf` to `70-no-bitmaps.conf`,
+and then use `chattr +i 70-no-bitmaps.conf` to make sure updates don't
+overwrite my setting (by setting the 'immutable' flag).
+This is likely sub-par, but that's just how I have always done it (tm).
 
+#### X11 PCF installation
+The instructions for installing the X11 PCF font are in the
+[X11/README.md](X11/README.md)
+file.
+
+### Mac OS X
+On Apple systems (OS X), you'll want to use the '.dfont' file. If that fails,
+try the .ttf or the .pt3 (PS type 3). IIRC, the installation process was
+relatively intuitive.
+
+
+## How I made it
 I screen-scraped the font from my IBM 3161 by hand via its built-in "test"
 mode, where it prints out its entire ASCII character set on a single screen. As
 a result, I cannot guarantee it to be 100% accurate in terms of spacing between
