@@ -146,6 +146,22 @@ aspect ratio of each 'pixel' is on the CRT near the center of the display.
 ![Photo of IBM 3161 terminal with amber CRT playing the text-based adventure gam
 e, Zork](http://i.imgur.com/MkboCJs.jpg)
 
+Still not done
+--------------
+My font does not currently supply most of the non-ASCII "Extended" characters
+that are in the real 3161 (characters above `0x7F`). Even those characters that
+have unicode equivalents do not have them associated with the same 'numbers'
+as they have in the terminal, and I am not clever/talented/obsessive enough to
+map those all out since I never use them. Additionally, some characters do not
+have a unicode equivalent that I am aware of at all.
+
+
+
+If anyone wants to add them, I will point you to [the photos of the terminal's
+screen in its 'testing' mode,](http://imgur.com/a/XHyDb) which contains a full
+printout of all of the characters the terminal is capable of displaying. Feel
+free to send me a pull request!
+
 Licensing
 ---------
 
