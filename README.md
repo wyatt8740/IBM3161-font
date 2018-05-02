@@ -64,8 +64,8 @@ On Windows, you will want the windows bitmap .fon file and/or the TrueType font
 the font previewer.
 
 ### Unix/X11 Installation
-In Unix and Linux distros with X11, you'll want the OpenType bitmap (.otb)
-and/or the TrueType font (.ttf).
+In (non-OS X/NextSTEP) Unix and Linux distros with X11, you'll want the
+OpenType bitmap (.otb) and/or the TrueType font (.ttf).
 
 There is also a PCF font (old-school X11 font) that it may be a good
 idea to install for programs like `xterm` and the GUI version of `emacs`.
@@ -79,17 +79,19 @@ like `~/.Xresources` or `~/.emacs`.
 I think this will be the same on the BSD's with X11 as it is for Linux distros,
 since I believe they share a codebase for their X servers and FreeType.
 
-
-#### X11 PCF Installation
+#### X11 OTB/PCF Installation
 The instructions for installing the X11 PCF font are in the
-[X11/README.md](X11/README.md)
-file.
+[X11/README.md](X11/README.md) file.
+
+#### X11 TrueType installation
+Copy the .ttf file to either a local font path (such as `~/.fonts`, or to a
+system-wide font path (such as /usr/share/fonts/). These paths are probably
+distro and OS dependant.
 
 ### Mac OS X ('MacOS') Installation
 On Apple systems (OS X), you'll want to use the '.dfont' file. If that fails,
 try the .ttf or the .pt3 (PS type 3). IIRC, the installation process was
 relatively intuitive.
-
 
 ## How I made it
 I screen-scraped the font from my IBM 3161 by hand via its built-in "test"
