@@ -66,8 +66,7 @@ xterm*font:   -gnu-IBM3161bitmap-medium-R-normal-sans-17-120-100-100-c-*-ISO1064
 
 If you're trying to get this working and you log in in using CDE
 (Common Desktop Environment), note that `~/.Xresources` is not sourced on login
-by CDE. To load the resources, add the following line to `~/.dtprofile` to
-make it load your `~/.Xresources` file:
+by CDE. To load the resources, add the following line to `~/.dtprofile`.
 ````
 xrdb -merge ~/.Xresources
 ````
