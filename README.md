@@ -79,39 +79,6 @@ like `~/.Xresources` or `~/.emacs`.
 I think this will be the same on the BSD's with X11 as it is for Linux distros,
 since I believe they share a codebase for their X servers and FreeType.
 
-#### X11 OTB and TTF Installation
-On my Debian system, I made the directory `~/.fonts` and copied
-IBM3161-bitmap.otb and IBM3161.ttf to it. If you don't want/need both versions,
-just copy one or the other. Java programs using AWT/Swing don't seem to work
-with X11 bitmap fonts on Unix systems, though (at least in OpenJDK), so I had
-to keep the TrueType version around for Java programs.
-
-The OTB is in the directory `opentype-bitmap/`, and the TTF in `truetype/`.
-
-The PCF's are the only fonts in the `X11/` directory, since they are the ones
-standardized by the X consortium and are the only technically X11-specific fonts
-here.
-
-##### If the OTB bitmap version isn't working
-In Debian, Ubuntu, and possibly other distributions, FreeType has bitmap fonts
-disabled by default for some silly reason.
-
-In Debian, this is fixable by deleting 
-`70-no-bitmaps.conf`: 
-````
-rm /etc/fonts/conf.d/70-no-bitmaps.conf
-````
-You may also want to consider running `dpkg-reconfigure fontconfig-config` and 
-changing the setting there. Then you might also have to run `dpkg-reconfigure 
-fontconfig` after that, according to random people on the internet. This is
-not how I have always done it, but it would make sense and be a more 'canonical'
-solution than my own.
-
-One can also just delete `70-no-bitmaps.conf` and copy
-`/usr/share/fontconfig/conf.avail/70-yes-bitmaps.conf` to `70-no-bitmaps.conf`,
-and then use `chattr +i 70-no-bitmaps.conf` to make sure updates don't
-overwrite my setting (by setting the 'immutable' flag).
-This is likely sub-par, but that's just how I have always done it (tm).
 
 #### X11 PCF Installation
 The instructions for installing the X11 PCF font are in the
