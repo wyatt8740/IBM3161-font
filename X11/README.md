@@ -13,9 +13,9 @@ to keep the TrueType version around for Java programs.
 
 The OTB is in the directory `X11/`, and the TTF in `truetype/`.
 
-The PCF's are the only fonts in the `X11/` directory, since they are the ones
-standardized by the X consortium and are the only technically X11-specific fonts
-here.
+The PCF's are the only technically X11-specific fonts here. OpenType Bitmaps
+just happen to not be supported anywhere that I have found but X-using unix
+systems, so I've dumped that here, too.
 
 #### If the OTB bitmap version isn't working
 In Debian, Ubuntu, and possibly other distributions, FreeType has bitmap fonts
