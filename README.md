@@ -10,7 +10,7 @@ This is a very basic repository for my IBM 3161 ASCII terminal font.
       - [X11 TrueType Installation](#-x11-truetype-installation-contents-)
     - [Mac OS X ('MacOS') Installation](#mac-os-x-macos-installation)
     - [Minecraft Installation](#minecraft-installation)
-    - [Rockbox Installation][#rockbox-installation]
+    - [Rockbox Installation](#rockbox-installation)
   - [How I Made It](#how-i-made-it)
   - [Still Not Done](#still-not-done)
   - [Licensing](#licensing)
