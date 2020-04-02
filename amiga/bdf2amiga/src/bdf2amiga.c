@@ -1,6 +1,6 @@
 /*
     bdf2amiga 1.3--BDF to Amiga font converter
-    Copyright © 1998 Kriton Kyrimis
+    Copyright Â© 1998 Kriton Kyrimis
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -32,14 +32,25 @@
 #include <proto/dos.h>
 #endif
 
-#define VERSION "1.3"
-#define PROGRAM_DATE "20.08.98"
+#define VERSION "1.4"
+#define PROGRAM_DATE "02.04.20"
 
-#define streq(s1, s2) (stricmp(s1, s2) == 0)
+/* #define streq(s1, s2) (stricmp(s1, s2) == 0) */
+#define streq(s1, s2) (strcasecmp(s1, s2) == 0)
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #ifdef __amigaos__
 #define BASENAME(x)	FilePart((unsigned char *)(x))
+#elif defined _WIN32
+/*
+ * 'rindex' isn't defined in Windows. Apparently even POSIX recommends strrchr
+ * these days, but in the name of not messing older systems up I only define
+ * this for win32.
+ * Also, BASENAME needs to use backslashes to work as desired in win32.
+ */
+#define rindex(a,b) strrchr( (a), (b))
+#define BASENAME(x)	(rindex((x),'\\') ? rindex((x),'\\')+1 : (x))
 #else
+/* Otherwise we're likely on a unixy system: */
 #define BASENAME(x)	(rindex((x),'/') ? rindex((x),'/')+1 : (x))
 #endif
 
@@ -109,7 +120,7 @@ main(int argc, char *argv[])
       case 'v':
         printf(
 	  "bdf2amiga " VERSION "--BDF to Amiga font converter\n"
-	  "Copyright © 1998 Kriton Kyrimis\n"
+	  "Copyright Â© 1998 Kriton Kyrimis\n"
 	  "\n"
 	  "This program is free software; you can redistribute it\n"
 	  "and/or modify it under the terms of the GNU General\n"
@@ -131,7 +142,11 @@ main(int argc, char *argv[])
     exit(20);
   }
   ifile = argv[0];
+#if defined _WIN32
+  in = fopen(ifile, "rb"); // Do Amiga C libraries handle the 'b' gracefully?
+#else
   in = fopen(ifile, "r");
+#endif
   if (in == NULL) {
     fprintf(stderr, "Can't open %s for input\n", ifile);
     exit(20);
@@ -469,7 +484,11 @@ parse()
     strcat(ofile, "i");
   }
   strcat(ofile, ".a");
+#if defined _WIN32
+  out = fopen(ofile, "wb"); // Do Amiga C libraries handle the 'b' gracefully?
+#else
   out = fopen(ofile, "w");
+#endif
   if (out == NULL) {
     fprintf(stderr, "Can't open %s for output\n", ofile);
     fclose(in);

@@ -16,8 +16,8 @@
 #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 CC = gcc
-CFLAGS = -O2 -fomit-frame-pointer -m68000 -fbaserel
-LDFLAGS = -s -m68000 -fbaserel -noixemul
+CFLAGS = -O2 -fomit-frame-pointer
+LDFLAGS = -s
 
 PROG = bdf2amiga
 OBJ = bdf2amiga.o getopt.o
