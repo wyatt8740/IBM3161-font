@@ -8,6 +8,8 @@ This is a very basic repository for my IBM 3161 ASCII terminal font.
     - [Unix/X11 Installation](#unixx11-installation)
       - [X11 OTB/PCF Installation](#x11-otbpcf-installation)
       - [X11 TrueType Installation](#x11-truetype-installation)
+      - [Linux Console (TTY) Installation](#linux-console-installation)
+      - [FreeBSD Console Installation](#freebsd-console-installation)
     - [Mac OS X ('MacOS') Installation](#mac-os-x-macos-installation)
     - [Minecraft Installation](#minecraft-installation)
     - [Rockbox Installation](#rockbox-installation)
@@ -96,6 +98,25 @@ The instructions for installing the X11 PCF font are in the
 Copy the .ttf file to either a local font path (such as `~/.fonts`, or to a
 system-wide font path (such as /usr/share/fonts/). These paths are probably
 distro and OS dependant.
+
+#### [Linux Console Installation](#contents)
+This only for sure applies to Debian and derivatives. It might be different on
+distros that I have not tried, but I bet it works there, too.
+Copy `linux-console/IBM3161.psf` to `/usr/share/consolefonts/IBM3161.psf`.
+Then, edit `/etc/default/console-setup, and add/change the `FONT=` line to
+read:
+
+    FONT="IBM3161.psf"
+
+You're done. You might have to reboot for it to show everywhere.
+
+#### [FreeBSD Console Installation](#contents)
+To-do: write up the FreeBSD console installation. I currently haven't gotten
+it to change in every terminal, just the primary one that you watch the boot
+process in. I am hoping I don't have to recompile the kernel to get it
+everywhere.
+
+I assure you, it does work in FreeBSD, though.
 
 ### [Mac OS X ('MacOS') Installation](#contents)
 On Apple systems (OS X), you'll want to use the '.dfont' file. If that fails,
