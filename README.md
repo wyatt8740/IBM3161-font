@@ -43,7 +43,7 @@ transformations on fonts.
 ### [Formats](#contents)
 Since I first created this font, I have been finding more and more formats I can
 convert it to! Whenever I find another format to port to, I do so and then add
-a commit here. Most recently, Minecraft ,Rockbox, and an
+a commit here. Most recently, Minecraft, Rockbox, and an
 X11 emacs-specific font (to fix strange rendering issues) have been added.
 
 This font is also available in a Minecraft 1.11-and-up compatible resource pack.
@@ -152,6 +152,12 @@ as they have in the terminal, and I am not clever/talented/obsessive enough to
 map those all out since I never use them. Additionally, some characters do not
 have a unicode equivalent that I am aware of at all.
 
+I would also like to try to turn the 3161 part of it (not the whole of Unifont)
+into a proper TTF font, meaning one that doesn't look pixellated but is made
+using vectors for the various angles in the typeface. If you want an example of
+somebody who has done this for a similar (but not identical!) font, see
+[rbanffy/3270font](https://github.com/rbanffy/3270font).
+
 If anyone wants to add them, I will point you to [the photos of the terminal's
 screen in its 'testing' mode,](http://imgur.com/a/XHyDb) which contains a full
 printout of all of the characters the terminal is capable of displaying. Feel
@@ -173,7 +179,7 @@ or later (with the aforementioned exception regarding embedding), the
 or the 3-Clause BSD License, which is reproduced
 below:
 
-Copyright 2017 Wyatt Ward
+Copyright © 2017-2020 Wyatt Ward
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
