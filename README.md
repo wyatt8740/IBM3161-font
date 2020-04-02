@@ -88,7 +88,9 @@ programs like `xterm` and is usually set through a text configuration file
 like `~/.Xresources` or `~/.emacs`.
 
 I think this will be the same on the BSD's with X11 as it is for Linux distros,
-since I believe they share a codebase for their X servers and FreeType.
+since I they share a codebase for their X servers and FreeType.
+
+It definitely is the same in FreeBSD, where I have tried it personally.
 
 #### [X11 OTB/PCF Installation](#contents)
 The instructions for installing the X11 PCF font are in the
