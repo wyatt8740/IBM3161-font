@@ -1,0 +1,132 @@
+
+
+
+bdf2amiga(1)                                         bdf2amiga(1)
+
+
+NNAAMMEE
+       bdf2amiga - converts BDF fonts to Amiga assembly format
+
+SSYYNNOOPPSSIISS
+       bbddff22aammiiggaa  [-d  OutputDirectory] [-f FamilyName] [-h] [-i]
+       [-v] BDFfile
+
+DDEESSCCRRIIPPTTIIOONN
+       This program converts X11 fonts in  BDF  format  to  Amiga
+       assembly,  which  can  then  be assembled and linked on an
+       Amiga to generate Amiga bitmapped  fonts.   The  generated
+       assembly  is  saved in a file whose name is formed by con-
+       catenating the family name of the font (e.g., Times),  its
+       point  size,  and, if the font is bold or italic, the let-
+       ters _i and/or _b, as appropriate, and  with  extension  _._a_.
+       E.g.,  for a Times font with size 12, the generated assem-
+       bly file will be called _T_i_m_e_s_1_2_._a.
+
+OOPPTTIIOONNSS
+       --dd OOuuttppuuttDDiirreeccttoorryy
+              This option specifies the directory where the  gen-
+              erated  assembly file will be created.  The default
+              is the current directory.
+
+       --ff FFaammiillyyNNaammee
+              Overrides the font family name contained in the BDF
+              file  with  _F_a_m_i_l_y_N_a_m_e.  As the font family name is
+              used to form the name  of  the  output  file,  this
+              option  is  useful  for  fonts  that do not contain
+              their family name in the BDF file.
+
+       _-_h     Displays a short help message.
+
+       _-_i     Instructs _b_d_f_2_a_m_i_g_a not to generate  references  to
+              Amiga  header  files, generating EQU directives for
+              the symbols required by the generated  code.   This
+              is  not  safe,  as  the information in these header
+              files may change in the future.  Thus,  you  should
+              only  use  this option if you do not have access to
+              the header files.
+
+       _-_v     Displays the program version.
+
+RREEQQUUIIRREEMMEENNTTSS
+       +o X11 fonts in BDF format.  An excellent source  for  such
+         fonts,  and the reason that this program was written, is
+         the FreeType package
+         (http://www.physiol.med.tu-muenchen.de/~robert/freetype.html),
+         a TrueType engine which comes with a font previewer  for
+         the  Amiga  and  a  TrueType  to BDF conversion utility.
+         (The latter is contained in  the  ``full''  distribution
+         package.)
+
+       +o An assembler.  I have used a68k successfully.
+
+
+
+Kriton Kyrimis             20 Aug 1998                          1
+
+
+
+
+
+bdf2amiga(1)                                         bdf2amiga(1)
+
+
+       +o A linker.  I have used slink, but blink should work just
+         as well.
+
+EEXXAAMMPPLLEE
+       Let us say that you want to convert a font  called  Fancy-
+       Font12.bdf  to  Amiga  format.   This can be done with the
+       following steps:
+
+       1. Convert  the  font  to  Amiga   assembly   code   using
+          _b_d_f_2_a_m_i_g_a:
+          bdf2amiga FancyFont12.bdf
+       This  will  create  a  file  called  something like Fancy-
+       Font15.a (see the bugs section).
+
+       2. Assemble the font:
+          a68k -iinclude: FancyFont15.a
+       This will generate FancyFont15.o.
+
+       3. Link the font:
+          blink from FancyFont15.o to 15
+          or
+          slink from FancyFont15.o to 15 noicons
+          depending on which linker you use.
+       This will generate file 15, which is  the  font  in  Amiga
+       format.
+
+       4. Create a directory named FancyFont in the FONTS: direc-
+          tory, and put file 15 there.  Run fixfonts to  generate
+          FONTS:FancyFont.font  and to make the font available to
+          your Amiga.  (If you are  converting  many  fonts,  you
+          need  only  run fixfonts once, after all the fonts have
+          been converted.)
+
+AAUUTTHHOORR
+       Kriton Kyrimis <kyrimis@cti.gr>
+
+BBUUGGSS
+       On the Amiga, the size of a font is its vertical  size  in
+       pixels,  and  not its point size, which is a rough measure
+       of the width of the font's characters.  As X11  font  size
+       is  point  size,  this has the result that the size of the
+       generated font is different from the original.
+
+       This program has been tested mainly with  fonts  generated
+       by  the _t_t_f_2_b_d_f program that comes with the FreeType pack-
+       age, and only briefly tested with other fonts.  If you add
+       to this that, since I didn't have any documentation on the
+       BDF format, I had to guess its  structure  by  staring  at
+       sample  fonts, finding a font that breaks _b_d_f_2_a_m_i_g_a should
+       not be very difficult.  Let me know, and I'll see if I can
+       provide a fix.
+
+
+
+
+
+
+Kriton Kyrimis             20 Aug 1998                          2
+
+
