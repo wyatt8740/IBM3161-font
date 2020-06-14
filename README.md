@@ -45,8 +45,9 @@ transformations on fonts.
 ### [Formats](#contents)
 Since I first created this font, I have been finding more and more formats I can
 convert it to! Whenever I find another format to port to, I do so and then add
-a commit here. Most recently, Minecraft, Rockbox, and an
-X11 emacs-specific font (to fix strange rendering issues) have been added.
+a commit here. Most recently, an Amiga version (made in Workbench 1.3 on an
+Amiga 500), as well as Minecraft, Rockbox, and an X11 emacs-specific font
+(to fix strange rendering issues) have been added.
 
 This font is also available in a Minecraft 1.11-and-up compatible resource pack.
 With minor tweaking it should also work for earlier and future versions.

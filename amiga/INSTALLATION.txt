@@ -1,0 +1,13 @@
+No real instructions yet!
+
+If you set the permissions correctly on the files and plop them in your FONTS:
+directory, I think that's all you actually need to do, but I've not tested
+this on any other machines.
+
+I can at least confirm it works on my Amiga 500 with Workbench 1.3 installed
+to a SCSI hard disk (via an A590 SCSI controller). I made the Amiga version
+by hand using `fed`, which came on the 'Extras' Diskette for Workbench 1.3,
+as I did not see a handy tool for doing the conversion automagically and I
+only really had to worry about the ASCII character set here (although in the
+future I plan to look into adding support for the 'international' character
+set).
