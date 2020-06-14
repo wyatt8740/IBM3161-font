@@ -8,6 +8,8 @@ This is a very basic repository for my IBM 3161 ASCII terminal font.
     - [Unix/X11 Installation](#unixx11-installation)
       - [X11 OTB/PCF Installation](#x11-otbpcf-installation)
       - [X11 TrueType Installation](#x11-truetype-installation)
+      - [Linux Console (TTY) Installation](#linux-console-installation)
+      - [FreeBSD Console Installation](#freebsd-console-installation)
     - [Mac OS X ('MacOS') Installation](#mac-os-x-macos-installation)
     - [Minecraft Installation](#minecraft-installation)
     - [Rockbox Installation](#rockbox-installation)
@@ -43,7 +45,7 @@ transformations on fonts.
 ### [Formats](#contents)
 Since I first created this font, I have been finding more and more formats I can
 convert it to! Whenever I find another format to port to, I do so and then add
-a commit here. Most recently, Minecraft ,Rockbox, and an
+a commit here. Most recently, Minecraft, Rockbox, and an
 X11 emacs-specific font (to fix strange rendering issues) have been added.
 
 This font is also available in a Minecraft 1.11-and-up compatible resource pack.
@@ -86,7 +88,9 @@ programs like `xterm` and is usually set through a text configuration file
 like `~/.Xresources` or `~/.emacs`.
 
 I think this will be the same on the BSD's with X11 as it is for Linux distros,
-since I believe they share a codebase for their X servers and FreeType.
+since they share a codebase for their X servers and FreeType.
+
+It definitely is the same in FreeBSD, where I have tried it personally.
 
 #### [X11 OTB/PCF Installation](#contents)
 The instructions for installing the X11 PCF font are in the
@@ -96,6 +100,25 @@ The instructions for installing the X11 PCF font are in the
 Copy the .ttf file to either a local font path (such as `~/.fonts`, or to a
 system-wide font path (such as /usr/share/fonts/). These paths are probably
 distro and OS dependant.
+
+#### [Linux Console Installation](#contents)
+This only for sure applies to Debian and derivatives. It might be different on
+distros that I have not tried, but I bet it works there, too.
+Copy `linux-console/IBM3161.psf` to `/usr/share/consolefonts/IBM3161.psf`.
+Then, edit `/etc/default/console-setup, and add/change the `FONT=` line to
+read:
+
+    FONT="IBM3161.psf"
+
+You're done. You might have to reboot for it to show everywhere.
+
+#### [FreeBSD Console Installation](#contents)
+To-do: write up the FreeBSD console installation. I currently haven't gotten
+it to change in every terminal, just the primary one that you watch the boot
+process in. I am hoping I don't have to recompile the kernel to get it
+everywhere.
+
+I assure you, it does work in FreeBSD, though.
 
 ### [Mac OS X ('MacOS') Installation](#contents)
 On Apple systems (OS X), you'll want to use the '.dfont' file. If that fails,
@@ -152,6 +175,12 @@ as they have in the terminal, and I am not clever/talented/obsessive enough to
 map those all out since I never use them. Additionally, some characters do not
 have a unicode equivalent that I am aware of at all.
 
+I would also like to try to turn the 3161 part of it (not the whole of Unifont)
+into a proper TTF font, meaning one that doesn't look pixellated but is made
+using vectors for the various angles in the typeface. If you want an example of
+somebody who has done this for a similar (but not identical!) font, see
+[rbanffy/3270font](https://github.com/rbanffy/3270font).
+
 If anyone wants to add them, I will point you to [the photos of the terminal's
 screen in its 'testing' mode,](http://imgur.com/a/XHyDb) which contains a full
 printout of all of the characters the terminal is capable of displaying. Feel
@@ -173,7 +202,7 @@ or later (with the aforementioned exception regarding embedding), the
 or the 3-Clause BSD License, which is reproduced
 below:
 
-Copyright 2017 Wyatt Ward
+Copyright © 2017-2020 Wyatt Ward
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
