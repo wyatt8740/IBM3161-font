@@ -45,8 +45,9 @@ transformations on fonts.
 ### [Formats](#contents)
 Since I first created this font, I have been finding more and more formats I can
 convert it to! Whenever I find another format to port to, I do so and then add
-a commit here. Most recently, Minecraft, Rockbox, and an
-X11 emacs-specific font (to fix strange rendering issues) have been added.
+a commit here. Most recently, an Amiga version (made in Workbench 1.3 on an
+Amiga 500), as well as Minecraft, Rockbox, and an X11 emacs-specific font
+(to fix strange rendering issues) have been added.
 
 This font is also available in a Minecraft 1.11-and-up compatible resource pack.
 With minor tweaking it should also work for earlier and future versions.
@@ -197,10 +198,12 @@ because I have based my font on GNU Unifont for nearly all non-ASCII characters.
 If you wish to use only the glyphs that I created (0x00-0x7F in the truetype, or
 0x00-0xFF plus unicode superscript and subscript numerical digits in the
 bitmap), those glyphs are licensed (at your option) under the GNU GPL version 2
-or later (with the aforementioned exception regarding embedding), the 
+or later (with the aforementioned exception regarding embedding), the
 [SIL Open Font License, version 1.1](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL#5667e9e4), 
 or the 3-Clause BSD License, which is reproduced
-below:
+below. Additionally, contact me if you wish to use it in another project or
+product under incompatible terms and I promise I'll be accommodating/not a jerk
+about it. It might even be free.
 
 Copyright © 2017-2020 Wyatt Ward
 
