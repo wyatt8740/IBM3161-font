@@ -47,12 +47,19 @@ and most programs based on [Motif](http://motif.ics.com/motif).
 
 This is such a PCF font.
 
-Copy it to the correct directory (example: on my machine this is
+Copy it to the correct directory (example: on my machine this could be
 `/usr/share/fonts/X11/misc/`).
 
 You may have to run `update-fonts-dir` in order to make this font appear in,
 say, `xfontsel`. I manually added the entry to `fonts.dir` in the directory I
 installed it in on my machine.
+
+Since `update-fonts-dir` appears debian-specific, you may want to try using
+`mkfontdir` (see the X.org [documentation](https://www.x.org/releases/X11R6.8.2/doc/fonts2.html#10)
+if that is the case.)
+
+You may additionally need to run `xset fp rehash` to make it appear after
+this has been done, if you don't want to restart your X server.
 
 ### Make the PCF work in X programs
 First, copy the PCF file to the same location you copied the TTF and/or OTB's
