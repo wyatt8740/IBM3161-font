@@ -1,0 +1,36 @@
+Version 1.0, 13-May-1998
+
+  First Public release.
+
+
+Version 1.1, 17-May-1998
+
+  Fixed width fonts are now handled correctly. Fixed width fonts generated
+  with version 1.0 did not behave completely as such, and had severe
+  problems when used in a shell window.
+
+  Corrected a potential problem with the way spacing and kerning
+  information was generated for undefined characters between the first
+  and last defined character in the font.
+
+
+Version 1.2, 25-May-1998
+
+  Added a SECTION directive to the generated assembly code, to make it
+  possible to assemble the code using SAS/C's asm.
+
+
+Version 1.3, 20-Aug-1998
+
+  Treat all non-proportional fonts as monospace rather than all
+  non-monospace fonts as proportional. This will render character cell
+  fonts correctly (or, at least, less incorrectly).
+
+
+Version 1.4, 02-Apr-2020
+
+  Different author (Wyatt Ward).
+
+  Altered Makefile and source code to compile on modern Unix systems, and
+  added new Makefile.win32 and provisions to source for compiling for Windows
+  (currently untested but likely to work; it does compile in Mingw).
