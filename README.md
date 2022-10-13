@@ -106,7 +106,7 @@ distro and OS dependant.
 This only for sure applies to Debian and derivatives. It might be different on
 distros that I have not tried, but I bet it works there, too.
 Copy `linux-console/IBM3161.psf` to `/usr/share/consolefonts/IBM3161.psf`.
-Then, edit `/etc/default/console-setup, and add/change the `FONT=` line to
+Then, edit `/etc/default/console-setup`, and add/change the `FONT=` line to
 read:
 
     FONT="IBM3161.psf"
