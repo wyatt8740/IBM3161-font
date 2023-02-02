@@ -24,13 +24,23 @@ This is a very basic repository for my IBM 3161 ASCII terminal font.
 e, Zork](http://i.imgur.com/MkboCJs.jpg)
 
 This repository contains a bitmap version of the font as well as a (slightly 
-less complete) truetype version created through GNU Unifont's "tracing" program 
-which it uses to create its truetype versions. The truetype covers 0x00 through 
-0x7F (the basic ASCII set), where I have extended the font to cover through 
-0xFF in the bitmap versions (I generated the truetype before I added 0x80-0xFF 
-into the bitmap, and I don't have access anymore to the scripts I made to
-convert to a truetype. They are too much effort for something I rarely use, and
-all of the essentials are still in the TTF anyway).
+less complete) truetype version created through GNU Unifont's "tracing"
+program which it uses to create its truetype versions. The truetype covers 0x00
+through 0xFF (the basic ASCII set and first 'extended' bank), while I have
+extended the font to cover through about 0x17F in the bitmap versions. Beyond
+these thresholds, the font more or less falls back on the glyphs from Unifont,
+which *almost* match the IBM font glyphs where applicable. This also means that
+I can use the font for other languages like Japanese, which is handy in a
+terminal if you are from an area of the world that does not use the latin
+alphabet as much or when dealing with files from users of another language
+in a terminal window.
+
+Creating the truetype to the extent I already have took a lot of effort, due to
+some flawed decision making early on in the process; while I plan to do better
+going forward, the fact remains that fixing/translating the bitmap glyphs to
+truetype is a lot of effort – too much for something I rarely use. All of the
+essentials are still in the TTF, anyway, and I expect that I may slowly
+continue to improve the TrueType going forward.
 
 I also have included the Fontforge Spline Font Database (SFD) files, which
 are uncompressed text (and thus pretty big; sorry). If you just want to use the
