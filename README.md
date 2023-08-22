@@ -13,6 +13,7 @@ This is a very basic repository for my IBM 3161 ASCII terminal font.
     - [Mac OS X ('MacOS') Installation](#mac-os-x-macos-installation)
     - [Minecraft Installation](#minecraft-installation)
     - [Rockbox Installation](#rockbox-installation)
+    - [GNU Emacs Installation](#gnu-emacs-installation)
   - [How I Made It](#how-i-made-it)
   - [Still Not Done](#still-not-done)
   - [Licensing](#licensing)
@@ -101,7 +102,8 @@ like `~/.Xresources` or `~/.emacs`.
 I think this will be the same on the BSD's with X11 as it is for Linux distros,
 since they share a codebase for their X servers and FreeType.
 
-It definitely is the same in FreeBSD, where I have tried it personally.
+It definitely is the same in OpenBSD and FreeBSD, where I have tried it
+personally.
 
 #### [X11 OTB/PCF Installation](#contents)
 The instructions for installing the X11 PCF font are in the
@@ -122,6 +124,9 @@ read:
     FONT="IBM3161.psf"
 
 You're done. You might have to reboot for it to show everywhere.
+
+The `setfont` command line program should also be able to apply it on a
+specific TTY on a one-off basis.
 
 #### [FreeBSD Console Installation](#contents)
 To-do: write up the FreeBSD console installation. I currently haven't gotten
@@ -152,6 +157,51 @@ I cannot support this port anymore until I can get a new CompactFlash card, as
 the one in my iPod just failed and the hard drive failed many years ago. Feel
 free to shoot me a question, but I might not be able to answer it.
 
+### [GNU Emacs Installation](#contents)
+There are two main ways to go about this. The first is to just use the truetype
+font. If I remember correctly, that spaces out everything correctly.
+
+The regular OTB version gets all characters padded out to 16px, regardless of
+their actual width. On account of this, it is not recommended.
+
+However, the OTB file `8wide/IBM3161APL.otb` should work. This is (if I
+remember correctly) named as such because it is derived from the APL variant of
+Unifont. I discovered that the APL variant of Unifont does seem to render
+correctly in emacs, and so I made a similar variant of it for my own font.
+
+I am not sure if it's actually because it's the APL variant, or because maybe
+emacs tries to prioritize `pcf` style fonts over `otb` ones. Or maybe something
+else FreeType related. But whatever the case may be, if you install
+`IBM3161APL.otb` somewhere (I have it in `~/.fonts/`), you should be able to
+make it work in GNU emacs with `m-x customize`, or else manually add it to
+`custom-set-faces` in your emacs initialization file (usually `~/.emacs` or
+`~/.emacs.d/init.el`).
+
+An example (from my `custom-set-faces` elisp) follows.
+
+The most important line to focus on is the one containing the string
+`IBM3161APL`. The rest is just provided for context. There's almost nothing I
+dislike as much as insufficient context when looking at code samples,
+especially in unfamiliar languages.
+
+    (custom-set-faces
+     ;; custom-set-faces was added by Custom.
+     ;; If you edit it by hand, you could mess it up, so be careful.
+     ;; Your init file should contain only one such instance.
+     ;; If there is more than one, they won't work right.
+     '(default ((t (:family "IBM3161APL" :foundry "PfEd" :slant normal :weight normal :height 128 :width normal))))
+     '(term-color-blue ((t (:background "#2272D9" :foreground "#2272D9"))))
+     '(term-color-cyan ((t (:background "#06989A" :foreground "#06989A"))))
+     '(term-color-green ((t (:background "#4E9A06" :foreground "#4E9A06"))))
+     '(term-color-magenta ((t (:background "#A168AB" :foreground "#A168AB"))))
+     '(term-color-red ((t (:background "#CC0000" :foreground "#CC0000"))))
+     '(term-color-white ((t (:background "#D3D7CF" :foreground "#D3D7CF"))))
+     '(term-color-yellow ((t (:background "#C4A000" :foreground "#C4A000"))))
+     '(tooltip ((t (:inherit tooltip-ui :background "lightyellow" :foreground "black")))))
+
+If someone knows why this `IBM3161APL` variant actually works when the regular
+OTB doesn't, please tell me about it. I really would like to know!
+
 ## [How I Made It](#contents)
 I screen-scraped the font from my IBM 3161 by hand via its built-in "test"
 mode, where it prints out its entire ASCII character set on a single screen. As
@@ -177,6 +227,10 @@ If I had a ROM dumper, I could also dump the ROM's within the terminal, as they
 are all socketed. This may happen in the future, but I have been using this
 font within my terminal emulators and in other places for the last year and not
 yet found any problems.
+
+If you want to hack on this yourself, I'd suggest using the .hex file as a
+jumping-off point if you want to be able to generate truetype versions. Merge
+it with the hex sources of Unifont.
 
 ## [Still Not Done](#contents)
 My font does not currently supply most of the non-ASCII "Extended" characters
