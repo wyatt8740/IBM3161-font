@@ -269,7 +269,7 @@ below. Additionally, contact me if you wish to use it in another project or
 product under incompatible terms and I promise I'll be accommodating/not a jerk
 about it. It might even be free.
 
-Copyright © 2017-2020 Wyatt Ward
+Copyright © 2017-2023 Wyatt Ward
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
