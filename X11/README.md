@@ -48,7 +48,10 @@ and most programs based on [Motif](http://motif.ics.com/motif).
 This is such a PCF font.
 
 Copy it to the correct directory (example: on my machine this could be
-`/usr/share/fonts/X11/misc/`).
+`/usr/share/fonts/X11/misc/`; in Solaris 8 it's
+`/usr/openwin/lib/X11/fonts/misc`, but you may also be able to use
+`sdtfontadm` to do the installation there. There's width problems in solaris,
+though).
 
 You may have to run `update-fonts-dir` in order to make this font appear in,
 say, `xfontsel`. I manually added the entry to `fonts.dir` in the directory I
